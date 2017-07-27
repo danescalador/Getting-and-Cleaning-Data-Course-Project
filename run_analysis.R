@@ -5,13 +5,13 @@
 library(dplyr)
 
 # Load activity (Y), subject and features (X) from test and train data files
-test_activity <- read.table("./test/y_test.txt", header = FALSE)
-test_subject <- read.table("./test/subject_test.txt", header = FALSE)
-test_features <- read.table("./test/X_test.txt", header = FALSE)
+test_activity <- read.table("./UCI HAR Dataset/test/y_test.txt", header = FALSE)
+test_subject <- read.table("./UCI HAR Dataset/test/subject_test.txt", header = FALSE)
+test_features <- read.table("./UCI HAR Dataset/test/X_test.txt", header = FALSE)
 
-train_activity <- read.table("./train/y_train.txt", header = FALSE)
-train_subject <- read.table("./train/subject_train.txt", header = FALSE)
-train_features <- read.table("./train/X_train.txt", header = FALSE)
+train_activity <- read.table("./UCI HAR Dataset/train/y_train.txt", header = FALSE)
+train_subject <- read.table("./UCI HAR Dataset/train/subject_train.txt", header = FALSE)
+train_features <- read.table("./UCI HAR Dataset/train/X_train.txt", header = FALSE)
 
 #Combine and merge test and train tables into one of each type
 activity <- rbind(test_activity, train_activity)
@@ -19,8 +19,8 @@ subject <- rbind(test_subject, train_subject)
 features <- rbind(test_features, train_features)
 
 #Get label names for columns from respective description files
-activity_labels <- read.table("./activity_labels.txt", header = FALSE)
-feature_labels <- read.table("./features.txt", header = FALSE)
+activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt", header = FALSE)
+feature_labels <- read.table("./UCI HAR Dataset/features.txt", header = FALSE)
 
 #Assign proper column names
 names(activity) <- "activity_id"

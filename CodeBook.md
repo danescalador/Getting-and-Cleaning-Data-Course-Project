@@ -31,7 +31,7 @@ This script does the following:
 
 ### How to run
 
-This script need to be run inside the UCI HAR Dataset folder in order to get all the files properly.
+This script must be run where the UCI HAR Dataset folder is in order to get all the files properly.
 
 It can be run in RStudio opening the script and pressing the source button.
 
@@ -60,12 +60,12 @@ There are 3 files of data in each folder:
 
 ``` r
 # Load activity (Y), subject and features (X) from test and train data files
-test_activity <- read.table("./test/y_test.txt", header = FALSE)
-test_subject <- read.table("./test/subject_test.txt", header = FALSE)
-test_features <- read.table("./test/X_test.txt", header = FALSE)
-train_activity <- read.table("./train/y_train.txt", header = FALSE)
-train_subject <- read.table("./train/subject_train.txt", header = FALSE)
-train_features <- read.table("./train/X_train.txt", header = FALSE)
+test_activity <- read.table("./UCI HAR Dataset/test/y_test.txt", header = FALSE)
+test_subject <- read.table("./UCI HAR Dataset/test/subject_test.txt", header = FALSE)
+test_features <- read.table("./UCI HAR Dataset/test/X_test.txt", header = FALSE)
+train_activity <- read.table("./UCI HAR Dataset/train/y_train.txt", header = FALSE)
+train_subject <- read.table("./UCI HAR Dataset/train/subject_train.txt", header = FALSE)
+train_features <- read.table("./UCI HAR Dataset/train/X_train.txt", header = FALSE)
 dim(test_features)
 ```
 
@@ -87,8 +87,8 @@ dim(features)
 
 ``` r
 #Get label names for columns from respective description files
-activity_labels <- read.table("./activity_labels.txt", header = FALSE)
-feature_labels <- read.table("./features.txt", header = FALSE)
+activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt", header = FALSE)
+feature_labels <- read.table("./UCI HAR Dataset/features.txt", header = FALSE)
 
 #Assign proper column names
 names(activity) <- "activity_id"
