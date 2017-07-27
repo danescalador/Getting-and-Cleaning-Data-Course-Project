@@ -1,6 +1,9 @@
 #Script to form a tidy dataset from UCI HAR Dataset
 # https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
+# Load required library
+library(dplyr)
+
 # Load activity (Y), subject and features (X) from test and train data files
 test_activity <- read.table("./test/y_test.txt", header = FALSE)
 test_subject <- read.table("./test/subject_test.txt", header = FALSE)
